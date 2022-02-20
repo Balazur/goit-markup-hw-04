@@ -2,7 +2,9 @@
     --primary-font-family: "Roboto", sans-serif;
     --primary-text-color-ligth: #212121; 
     --secondary-text-color-ligth: #757575; 
+    --primery-color-icon: #AFB1B8;
     --primary-text-color-dark: #FFFFFF; 
+    --focus-color: #2196F3;
 }
 
 body {
@@ -46,9 +48,6 @@ img {
     text-decoration: none;
 }
 
-.current {
-    color: #2196F3;
-}
 
 .section {
     padding-top: 94px;
@@ -66,6 +65,46 @@ img {
   .item:not(:last-child){
     margin-right: 30px;
   }
+
+  .current {
+    color: #2196F3;
+}
+
+ .social-list {
+  display: flex;
+  justify-content: center;
+}
+
+.social-list-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+/* .social-list-link:hover,
+.social-list-link:focus{
+    background-color: #188CE8;
+    fill: var(--primary-text-color-dark);
+} */
+
+.social-list-link:hover,
+.social-list-link:focus {
+  background-color:var(--focus-color);
+}
+.social-list-link:hover .social-list-icon,
+.social-list-link:focus .social-list-icon {
+  fill: var(--primary-text-color-dark);
+}
+
+.social-list-item:not(:last-child){
+margin-right: 10px;
+}
+
+
 /* ========header======= */
 .top-line{
     padding-top: 24px;
@@ -89,9 +128,10 @@ img {
     font-family: "Raleway";
     font-weight: 700;
     font-size: 26px;
+    font-style: normal;
     line-height: 1.24;
     letter-spacing: 0.03em;
-    color: #2196F3;
+    color: var(--focus-color);
 }
 
 .studio-up {
@@ -120,16 +160,20 @@ img {
     color: var(--primary-text-color-ligth);
 }
 
-.menu-nav-link:hover{
+/* .current {
     color: #2196F3;
-}
+} */
+
+.menu-nav-link:hover,
 .menu-nav-link:focus{
-    color: #2196F3;
+    color: var(--focus-color);
 }
+
 
 .headrer-contacts{
     display: flex;
     align-items: center; 
+    justify-content: center;
     margin-left: auto;
 }
 
@@ -138,27 +182,38 @@ img {
 }
 
 .contact-link {
+
 font-weight: 500;
 font-size: 14px;
 line-height: 16px;
 letter-spacing: 0.02em;
 color: var(--secondary-text-color-ligth);
+fill: var(--secondary-text-color-ligth);
 }
 
-.contact-link:hover {
-    color: #2196F3;
+.contact-item-icon{
+    margin-right: 10px;
 }
-.contact-link:focus {
-    color: #2196F3;
+
+.contact-link:hover,
+.contact-link:focus{
+    color: var(--focus-color);
+    fill: var(--focus-color);
 }
+
 /* =======end header======= */
 /* ======STUDIO====== */
 /* =======hero======= */
-.hero {
+.hero-section{
+    background-image: linear-gradient(
+    rgba(47, 48, 58, 0.4),
+    rgba(47, 48, 58, 0.4));
+    background-image: url(../images/hat.jpg) ;
+    background-color: #2F303A;
+    background-size: cover;
     padding-top: 200px;
     padding-bottom: 200px;
-    background: #2F303A;
-    justify-content: center;
+    /* max-width: 1600px; */
 }
 
 .hero-title {
@@ -170,6 +225,7 @@ color: var(--secondary-text-color-ligth);
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--primary-text-color-dark);
+    /* color: #000000; */
 }
 
 .hero-button{
@@ -203,8 +259,16 @@ color: var(--secondary-text-color-ligth);
     display: flex;
 }
 
-.features-item:not(:last-child){
-    margin-right: 30px;
+.features-icon-box{
+    display: flex;
+    background: #F5F4FA;
+    border-radius: 4px;
+    width: 270px;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    /* padding: 102 25; */
 }
 
 .title-features{
@@ -245,6 +309,7 @@ color: var(--secondary-text-color-ligth);
 .team-section{
     padding-top: 0px;
     background-color: #F5F4FA;
+    box-sizing: content-box;
 }
 
 .team-list{
@@ -255,7 +320,6 @@ color: var(--secondary-text-color-ligth);
 }
 
 .team-card{
-
     margin-left: 30px;
     margin-top: 30px;
     flex-basis: calc((100% - 120) / 4);
@@ -288,7 +352,48 @@ color: var(--secondary-text-color-ligth);
     letter-spacing: 0.03em;
     color: var(--secondary-text-color-ligth);
 }
+
+.social-list-icon{
+    fill: var(--primery-color-icon);
+}
+
 /* ======end our team====== */
+/* ======clients====== */
+
+.client-list{
+    display: flex;
+    /* flex-wrap: wrap; */
+    margin-left: -30px;
+    margin-top: -30px;
+    justify-content: center;
+}
+
+.client-list-link{
+    display: flex;
+    margin-left: 30px;
+    margin-top: 30px;
+    flex-basis: calc((100% - 120) / 4);
+    /* background: #FFFFFF;    */
+    border: 1px solid #AFB1B8;
+    box-sizing: border-box;
+    border-radius: 4px; 
+}
+
+.client-list-link:hover,
+.client-list-link:focus{
+    border: 1px solid var(--focus-color);
+}
+
+.client-list-icon{ 
+    fill: var(--primery-color-icon);
+}
+
+.client-list-link:hover .client-list-icon,
+.client-list-link:focus .client-list-icon{
+     fill: var(--focus-color);
+}
+
+/* ======end clients====== */
 /* ======END STUDIO====== */
 /* ======PORTOLIO====== */
 .filter-buttons{
@@ -319,15 +424,13 @@ color: var(--secondary-text-color-ligth);
     cursor: pointer;
 }
 
-.filter-button:focus{
+.filter-button:focus,
+.filter-button:hover{
 background: #2196F3;
 color: var(--primary-text-color-dark);
+box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-.filter-button:hover{
-    background: #2196F3;
-    color: var(--primary-text-color-dark);
-    }
 
 .projects{ 
     display: flex;
@@ -343,6 +446,11 @@ color: var(--primary-text-color-dark);
     background: #FFFFFF;
     border-bottom: 1px solid #EEEEEE;
     box-sizing: border-box;
+}
+
+.project-card:hover,
+.project-card:focus{
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .project-description{
@@ -377,8 +485,15 @@ color: var(--primary-text-color-dark);
     background: #2F303A;
 }
 
+.navi-footer{
+    display: flex;
+}
+
 .web-studio-footer{
     margin-bottom: 20px;
+    margin-right: 70px;
+    font-style: normal;
+    
 }
 .studio-down{
     font-family: "Raleway";
@@ -409,6 +524,10 @@ color: var(--primary-text-color-dark);
     color: #188CE8;
 }
 
+.web-studio-down{
+    margin-bottom: 20px;
+}
+
 .adress-item:not(:last-child){
     margin-bottom: 9px;
 }
@@ -427,4 +546,28 @@ color: rgba(255, 255, 255, 0.6);
 }
 .contacts:focus{
     color: #188CE8;
+}
+
+.footer-social{
+    padding-top: 12px;
+    
+}
+.footer-social-title{
+    font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 16px;
+letter-spacing: 0.03em;
+text-transform: uppercase;
+margin-bottom: 20px;
+color: var(--primary-text-color-dark);
+}
+
+.footer-social-link{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-social-icon{
+    fill: var(--primary-text-color-dark);
 }
